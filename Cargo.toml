@@ -32,6 +32,9 @@ redundant-clone = "warn"
 alloy-primitives = { version = "=1.4.1", git = "https://github.com/split-research/alloy-core.git", branch = "rkyv", package = "alloy-primitives", default-features = false }
 alloy-rlp = { version = "0.3", default-features = false }
 
+# rkyv
+rkyv = "0.8"
+
 # serde
 serde = { version = "1.0", default-features = false, features = [
     "derive",
