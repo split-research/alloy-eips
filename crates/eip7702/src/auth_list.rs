@@ -61,7 +61,11 @@ impl From<Address> for RecoveredAuthority {
 #[cfg_attr(feature = "serde", serde(rename_all = "camelCase"))]
 #[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary))]
 #[cfg_attr(feature = "borsh", derive(borsh::BorshSerialize, borsh::BorshDeserialize))]
-#[cfg_attr(feature = "rkyv", derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize))]
+#[cfg_attr(
+    feature = "rkyv",
+    derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize),
+    rkyv(derive(Debug))
+)]
 pub struct Authorization {
     /// The chain ID of the authorization.
     pub chain_id: U256,
@@ -122,7 +126,11 @@ impl Authorization {
 #[derive(Debug, Clone, Eq, PartialEq)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 #[cfg_attr(feature = "borsh", derive(borsh::BorshSerialize, borsh::BorshDeserialize))]
-#[cfg_attr(feature = "rkyv", derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize))]
+#[cfg_attr(
+    feature = "rkyv",
+    derive(rkyv::Archive, rkyv::Serialize, rkyv::Deserialize),
+    rkyv(derive(Debug))
+)]
 pub struct SignedAuthorization {
     /// Inner authorization.
     #[cfg_attr(feature = "serde", serde(flatten))]
