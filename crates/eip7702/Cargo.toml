@@ -34,6 +34,9 @@ serde_with = { version = "3", optional = true, default-features = false, feature
 # borsh
 borsh = { workspace = true, optional = true, features = ["derive"] }
 
+# rkyv
+rkyv = { workspace = true, optional = true }
+
 # arbitrary
 arbitrary = { workspace = true, features = ["derive"], optional = true }
 
@@ -51,12 +54,16 @@ serde_json.workspace = true
 
 [features]
 default = ["std"]
-std = ["alloy-primitives/std", "alloy-rlp/std", "serde?/std", "thiserror/std", "borsh?/std"]
+std = [
+    "alloy-primitives/std",
+    "alloy-rlp/std",
+    "serde?/std",
+    "thiserror/std",
+    "borsh?/std",
+]
 serde = ["dep:serde", "alloy-primitives/serde"]
 serde-bincode-compat = ["serde_with"]
 arbitrary = ["std", "dep:arbitrary", "dep:rand", "alloy-primitives/arbitrary"]
 k256 = ["alloy-primitives/k256", "dep:k256"]
-borsh = [
-	"dep:borsh",
-    "alloy-primitives/borsh",
-]
+borsh = ["dep:borsh", "alloy-primitives/borsh"]
+rkyv = ["dep:rkyv", "alloy-primitives/rkyv"]

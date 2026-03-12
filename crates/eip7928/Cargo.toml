@@ -35,6 +35,9 @@ serde = { workspace = true, optional = true }
 # borsh
 borsh = { workspace = true, optional = true, features = ["derive"] }
 
+# rkyv
+rkyv = { workspace = true, optional = true }
+
 # arbitrary
 arbitrary = { workspace = true, features = ["derive"], optional = true }
 rand = { workspace = true, optional = true }
@@ -47,3 +50,4 @@ borsh = ["dep:borsh", "alloy-primitives/borsh"]
 rlp = ["alloy-primitives/rlp"]
 serde = ["dep:serde", "alloy-primitives/serde"]
 arbitrary = ["std", "dep:arbitrary", "alloy-primitives/arbitrary"]
+rkyv = ["dep:rkyv", "alloy-primitives/rkyv"]

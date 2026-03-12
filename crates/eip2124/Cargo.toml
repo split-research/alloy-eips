@@ -28,6 +28,9 @@ alloy-rlp = { workspace = true, features = ["derive"] }
 # serde
 serde = { workspace = true, optional = true }
 
+# rkyv
+rkyv = { workspace = true, optional = true }
+
 # used for forkid
 crc = "3"
 
@@ -46,3 +49,4 @@ default = ["std"]
 std = ["alloy-primitives/std", "alloy-rlp/std", "serde?/std", "thiserror/std"]
 serde = ["dep:serde", "alloy-primitives/serde"]
 arbitrary = ["std", "dep:arbitrary", "dep:rand", "alloy-primitives/arbitrary"]
+rkyv = ["dep:rkyv", "alloy-primitives/rkyv"]
