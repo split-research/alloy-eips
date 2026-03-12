@@ -29,8 +29,7 @@ option-if-let-else = "warn"
 redundant-clone = "warn"
 
 [workspace.dependencies]
-# alloy-primitives = { version = "=1.4.1", git = "https://github.com/split-research/alloy-core.git", branch = "rkyv", package = "alloy-primitives", default-features = false }
-alloy-primitives = { version = "=1.4.1", path = "../alloy-core/crates/primitives", default-features = false }
+alloy-primitives = { version = "=1.4.1", git = "https://github.com/split-research/alloy-core.git", branch = "rkyv", package = "alloy-primitives", default-features = false }
 alloy-rlp = { version = "0.3", default-features = false }
 
 # rkyv
